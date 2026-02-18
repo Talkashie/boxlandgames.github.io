@@ -24,6 +24,34 @@ body {
     margin: 3em;
     max-width: 55em;
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.gamebox {
+    background-image: url(../images/bg3.png);
+    border: 4px silver outset;
+    border-radius: 10px;
+    padding: 1em;
+    margin: 3em;
+    max-width: 55em;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+a.biglink,
+a.biglink:visited {
+  font-size: 2em;
+  text-shadow: 0px 2px 4px black;
+  transition-duration: 0.4s;
+  text-align: center;
+  text-decoration: none;
+  font-family: beKind;
+  color: white;
+}
+
+a.biglink:hover {
+  text-shadow: 0px 2px 4px white;
+  transition-duration: 0.4s;
+  text-decoration: none;
 }
 
 .align_center {
@@ -44,7 +72,12 @@ img {
     display: inline-block;
     border: 4px silver ridge;
     width: 50%;
-    box-shadow: 1px 1px 2em grey;
+    box-shadow: 1px 1px 2em white;
+    transition-duration: 0.4s;
+}
+img:hover {
+    box-shadow: 1px 1px 3em white;
+    transition-duration: 0.4s;
 }
 
 h1 {
@@ -54,6 +87,16 @@ h1 {
 
 h2 {
   font-size: 3em;
+  text-shadow: 0px 2px 2px black;
+}
+
+h3 {
+  font-size: 2em;
+  text-shadow: 0px 2px 2px black;
+}
+
+h4 {
+  font-size: 1.5em;
   text-shadow: 0px 2px 2px black;
 }
 
@@ -67,6 +110,8 @@ li {
     color: white;
     text-align: center;
     text-shadow: 0px 2px 4px black;
+    padding-left: 2em;
+    padding-right: 2em;
 }
 
 p {
@@ -86,52 +131,8 @@ h1, h2, h3, h4 {
     font-family: beKind;
 }
 
-p,
-li {
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
 header,
 section {
     max-width: 90em;
     min-width: 45em;
-}
-
-a:link,
-a:visited {
-    background-color: rgba(255, 255, 255, 0.53);
-    color: black;
-    border: 2px ridge silver;
-    padding: 14px 16px;
-    text-align: center;
-    text-decoration: none;
-    transition-duration: 0.4s;
-    display: inline;
-    box-shadow: 1px 1px 0.5em grey;
-    text-shadow: 1px 1px 2px white;
-
-}
-
-a:hover {
-    background-color: rgba(124, 93, 34, 0.15);
-    box-shadow: 1px 1px 1em rgba(255, 255, 255, 0.53);
-}
-
-a.hilight:link,
-a.hilight:visited {
-    color: black;
-    border: 2px ridge silver;
-    padding: 14px 16px;
-    text-align: center;
-    text-decoration: none;
-    transition-duration: 0.4s;
-    display: inline;
-    box-shadow: 1px 1px 0.5em grey;
-    text-shadow: 1px 1px 2px white;
-    background-color: rgba(247, 212, 147, 0.64);
-}
-
-a.hilight:hover {
-    background-color: rgba(124, 93, 34, 0.15);
-    box-shadow: 1px 1px 1em rgba(255, 255, 255, 0.53);
 }
