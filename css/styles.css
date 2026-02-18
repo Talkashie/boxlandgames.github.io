@@ -61,16 +61,18 @@ a.biglink:hover {
 header {
     background-image: url(../images/bg2.png);
     min-height: 15em;
-    border: 4px silver ridge;
+    border: 4px silver outset;
     padding: 1em;
     margin: 3em;
     max-width: 50em;
     box-shadow: 464px 1px 2em grey;
+    border-radius: 10px;
 }
 
 img {
     display: inline-block;
-    border: 4px silver ridge;
+    border: 4px silver outset;
+    border-radius: 10px;
     width: 50%;
     box-shadow: 1px 1px 2em white;
     transition-duration: 0.4s;
