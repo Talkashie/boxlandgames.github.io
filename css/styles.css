@@ -22,7 +22,6 @@ body {
     border-radius: 10px;
     padding: 1em;
     margin: 3em;
-    max-width: 55em;
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
@@ -33,12 +32,17 @@ body {
     border-radius: 10px;
     padding: 1em;
     margin: 3em;
-    max-width: 55em;
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
 }
 
 a.biglink,
 a.biglink:visited {
+  background-image: url(../images/bg2.png);
+  border: 4px silver outset;
+  border-radius: 10px;
+  padding: 1em;
+  margin: 3em;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
   font-size: 2em;
   text-shadow: 0px 2px 4px black;
   transition-duration: 0.4s;
@@ -50,23 +54,14 @@ a.biglink:visited {
 
 a.biglink:hover {
   text-shadow: 0px 2px 4px white;
-  transition-duration: 0.4s;
+  border: 4px white inset;
+  transition-duration: 0.6s;
   text-decoration: none;
+  box-shadow: 0px 8px 24px rgba(255, 255, 255, 0.2);
 }
 
 .align_center {
     text-align: center;
-}
-
-header {
-    background-image: url(../images/bg2.png);
-    min-height: 15em;
-    border: 4px silver outset;
-    padding: 1em;
-    margin: 3em;
-    max-width: 50em;
-    box-shadow: 464px 1px 2em grey;
-    border-radius: 10px;
 }
 
 img {
@@ -121,20 +116,12 @@ p {
     margin-right: 12em;
 }
 
-.nav {
-
-    list-style: outside;
-    display: inline;
-    padding: 2px;
-    transition-duration: 0.4s;
-}
-
 h1, h2, h3, h4 {
     font-family: beKind;
 }
 
 header,
 section {
-    max-width: 90em;
+    max-width: 75em;
     min-width: 45em;
 }
