@@ -6,7 +6,13 @@ function expandImage(image) {
 
 function closeImage() {
     document.getElementById("imagePopup").classList.remove("active");
-    document.getElementById("popupImage").src = "";
+
+    setTimeout(function () {
+        document.getElementById("popupImage").src = "";
+    }, 200);
+
+    //200 is the length of time to fade out the image
+    //This should match the fade out time in .image-popup
 }
 
 document.addEventListener("DOMContentLoaded", function () {
