@@ -22,6 +22,8 @@ body {
     gap: 1.5em;
     justify-items: center;
     align-items: center;
+    padding: 2em;
+    box-sizing: border-box;
 }
 
 .gallery img {
