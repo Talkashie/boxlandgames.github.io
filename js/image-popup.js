@@ -1,6 +1,6 @@
 function expandImage(image) {
     image.style.transform = "";
-    document.getElementById("popupImage").src = image.src;
+    document.getElementById("popupImage").src = image.dataset.full || image.src;
     document.getElementById("imagePopup").classList.add("active");
 }
 
