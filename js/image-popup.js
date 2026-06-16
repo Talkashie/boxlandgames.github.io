@@ -1,6 +1,12 @@
 function expandImage(image) {
     image.style.transform = "";
-    document.getElementById("popupImage").src = image.dataset.full || image.src;
+    image.style.filter = "";
+
+    const popupImage = document.getElementById("popupImage");
+
+    popupImage.src = image.dataset.full || image.src;
+    popupImage.alt = image.alt || "Expanded image";
+
     document.getElementById("imagePopup").classList.add("active");
 }
 
@@ -10,17 +16,17 @@ function closeImage() {
     setTimeout(function () {
         document.getElementById("popupImage").src = "";
     }, 200);
-
-    //200 is the length of time to fade out the image
-    //This should match the fade out time in .image-popup
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const tiltImages = document.querySelectorAll(".tilt-image");
 
-    tiltImages.forEach(function (image) {
-        image.addEventListener("mousemove", function (event) {
-            const box = image.getBoundingClientRect();
+    function addTiltEffect(hoverArea, image) {
+        let resetTimer;
+
+        hoverArea.addEventListener("mousemove", function (event) {
+            clearTimeout(resetTimer);
+
+            const box = hoverArea.getBoundingClientRect();
             const x = event.clientX - box.left;
             const y = event.clientY - box.top;
 
@@ -37,18 +43,36 @@ document.addEventListener("DOMContentLoaded", function () {
             image.style.filter = "brightness(" + brightness + ")";
         });
 
-        image.addEventListener("mouseleave", function () {
-            image.style.transition = "transform 0.35s ease-out, filter 0.35s ease-out";
-            image.style.transform = "";
-            image.style.filter = "";
+        hoverArea.addEventListener("mouseleave", function () {
+            resetTimer = setTimeout(function () {
+                image.style.transition = "transform 0.35s ease-out, filter 0.35s ease-out";
+                image.style.transform = "";
+                image.style.filter = "";
+            }, 75);
         });
+
+        hoverArea.addEventListener("click", function () {
+            if (image.classList.contains("expandable-image")) {
+                expandImage(image);
+            }
+        });
+    }
+
+    const tiltBoxes = document.querySelectorAll(".tilt-box");
+
+    tiltBoxes.forEach(function (box) {
+        const image = box.querySelector(".tilt-image");
+
+        if (image) {
+            addTiltEffect(box, image);
+        }
     });
 
-    const expandableImages = document.querySelectorAll(".expandable-image");
+    const unwrappedTiltImages = document.querySelectorAll(".tilt-image");
 
-    expandableImages.forEach(function (image) {
-        image.addEventListener("click", function () {
-            expandImage(image);
-        });
+    unwrappedTiltImages.forEach(function (image) {
+        if (!image.closest(".tilt-box")) {
+            addTiltEffect(image, image);
+        }
     });
 });
