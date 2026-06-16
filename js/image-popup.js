@@ -1,20 +1,30 @@
+let closeTimer;
+
 function expandImage(image) {
+    clearTimeout(closeTimer);
+
     image.style.transform = "";
     image.style.filter = "";
 
+    const popup = document.getElementById("imagePopup");
     const popupImage = document.getElementById("popupImage");
 
     popupImage.src = image.dataset.full || image.src;
     popupImage.alt = image.alt || "Expanded image";
 
-    document.getElementById("imagePopup").classList.add("active");
+    popup.classList.add("active");
 }
 
 function closeImage() {
-    document.getElementById("imagePopup").classList.remove("active");
+    const popup = document.getElementById("imagePopup");
+    const popupImage = document.getElementById("popupImage");
 
-    setTimeout(function () {
-        document.getElementById("popupImage").src = "";
+    popup.classList.remove("active");
+
+    closeTimer = setTimeout(function () {
+        if (!popup.classList.contains("active")) {
+            popupImage.src = "";
+        }
     }, 200);
 }
 
